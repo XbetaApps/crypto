@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Steganography Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Steganography Tool</h1>
+        
+        <!-- Image Selection and Display -->
+        <div class="section">
+            <button id="imageButton" onclick="selectImage()">Select Image</button>
+            <input type="file" id="imageInput" accept=".bmp" style="display: none;">
+            <h3>Original Image</h3>
+            <div class="scrollable-container">
+                <canvas id="coverCanvas"></canvas>
+            </div>
+        </div>
+        
+        <!-- Secret Text Input and Result Text Display -->
+        <div class="section">
+            <textarea id="secretText" placeholder="Enter secret text here"></textarea>
+            <label for="lsbCount">Select LSB Bits:</label>
+            <select id="lsbCount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <button onclick="hideText()">Hide Text</button>
+            <button onclick="restoreText()">Restore Text</button>
+            <button onclick="saveImage()">Save Image</button>
+            <button onclick="location.reload()">Clear</button>
+        </div>
+        
+        <!-- Result Image Display -->
+        <div class="section">
+            <h3>Result Image</h3>
+            <div class="scrollable-container">
+                <canvas id="resultCanvas"></canvas>
+            </div>
+        </div>
+
+        <!-- Restored Text Display -->
+        <div class="section">
+            <h3>Restored Text</h3>
+            <textarea id="restoredText" placeholder="Restored text will appear here..." readonly></textarea>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        Programmed by <h3>Xbeta</h3>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
